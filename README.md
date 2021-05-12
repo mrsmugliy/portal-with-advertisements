@@ -20,7 +20,7 @@ $ npm start
 ```
 ## Ports
 
-the API backend is under the port ```8000```
+the API backend is under the port ```##8000```
 
 the frontend is under the port ```8080```
 
