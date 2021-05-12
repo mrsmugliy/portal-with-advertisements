@@ -47,8 +47,16 @@ services:
       - "8000:8000"
     environment:
       - DJANGO_SETTINGS=dev
+    depends_on:
+      - db
   ng:
     container_name: ng
     build: angular
     ports:
       - "8080:80"
+  db:
+    image: nouchka/sqlite3:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - /code/db.sqlite3
