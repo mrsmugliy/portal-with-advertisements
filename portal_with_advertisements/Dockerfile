@@ -12,8 +12,16 @@ RUN pip install -r /requirements.txt
 RUN mkdir /code
 WORKDIR /code
 
+
+
+COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
+
 # Copy project code.
 COPY . /code/
+
+# run docker-entrypoint.sh
+ENTRYPOINT ["./docker-entrypoint.sh"]
+
 
 EXPOSE 8080
 
