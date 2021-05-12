@@ -21,8 +21,9 @@ $ npm start
 ## Ports
 
 the API backend is under the port ```8000```
+the frontend is under the port ```8080```
 
 
 
-in case of error "standard_init_linux.go:219: exec user process caused: no such file or directory"
+in case of error ```"standard_init_linux.go:219: exec user process caused: no such file or directory"```
 in the file "portal_with_advertisements/docker-entrypoint.sh", you need to change from CRLF to LF.
