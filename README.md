@@ -16,5 +16,5 @@ $ pip install -r requirements.txt
 $ python3 manage.py runserver
 
 $ cd test_task_for_insert\angular\angular-app
-npm start
+$ npm start
 ```
