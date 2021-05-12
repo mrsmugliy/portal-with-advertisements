@@ -1,0 +1,18 @@
+<div class="container">
+  <h1>Offers</h1>
+  <mat-form-field>
+    <input matInput type="text" [(ngModel)]="category" (input)="Search()" placeholder="Search by category">
+  </mat-form-field>
+
+  <div class="content">
+    <mat-card *ngFor="let offer of offers" (click)="selectOffer(offer)">
+      <mat-card-title>{{offer.title}}</mat-card-title>
+      <mat-card-content>
+        Price: {{offer.price}}
+      </mat-card-content>
+      <mat-card-content>
+        Category: {{offer.category}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

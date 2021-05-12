@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Offers</h1>
+
+  <div class="content">
+    <mat-card>
+      <mat-card-title>{{offer?.title}}</mat-card-title>
+      <mat-card-content>
+        {{offer?.description}}
+      </mat-card-content>
+      <mat-card-content>
+        {{offer?.price}}
+      </mat-card-content>
+      <mat-card-content>
+        {{offer?.category.name}}
+      </mat-card-content>
+    </mat-card>
+  </div>
+  <div>
+
+    <button mat-stroked-button color="primary" (click)="goBack()">Back to offers</button>
+  </div>
+</div>
+
+
+
+

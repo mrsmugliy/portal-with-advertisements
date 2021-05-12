@@ -1,0 +1,54 @@
+#version: "3.9"
+#
+#services:
+#  nginxserver:
+#    image: nginx:alpine
+#    container_name: ngdocker volume lsinx-server
+#    restart: unless-stopped
+#    valuse:
+#      - ./config/nginx:/etc/nginx/conf.d
+#    ports:
+#      - "80:80"
+#    depends_on:
+#      - ng-web
+#      - django
+#
+#
+#  ng-web:
+#    image: node
+#    container_name: ng-web-server
+#    volumes:
+#      - './angular-app:/app'
+#    command: bash -c "cd app && ./node_modules/@angular/cli/bin/ng serve --port 4201 --host 0.0.0.0"
+#    ports:
+#      - '4201:4201'
+#
+#
+#  django:
+#    container_name: django-server
+#    build: .
+#    command: python3 manage.py runserver 0.0.0.0:8000
+#    volumes:
+#      - "./portal_with_advertisements:/app"
+#    ports:
+#      - "8000:8000"
+
+
+version: "3"
+
+services:
+  dj:
+    container_name: dj
+    build: portal_with_advertisements
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./portal_with_advertisements:/code
+    ports:
+      - "8000:8000"
+    environment:
+      - DJANGO_SETTINGS=dev
+  ng:
+    container_name: ng
+    build: angular
+    ports:
+      - "8080:80"
