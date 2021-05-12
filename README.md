@@ -18,3 +18,7 @@ $ python3 manage.py runserver
 $ cd test_task_for_insert\angular\angular-app
 $ npm start
 ```
+
+
+in case of error "standard_init_linux.go:219: exec user process caused: no such file or directory"
+in the file "portal_with_advertisements/docker-entrypoint.sh", you need to change from CRLF to LF.
