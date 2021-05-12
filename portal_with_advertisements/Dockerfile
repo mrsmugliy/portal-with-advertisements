@@ -14,13 +14,15 @@ WORKDIR /code
 
 
 
-COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
+#COPY ./docker-entrypoint.sh ./docker-entrypoint.sh
 
 # Copy project code.
 COPY . /code/
 
 # run docker-entrypoint.sh
-ENTRYPOINT ["./docker-entrypoint.sh"]
+COPY ./docker-entrypoint.sh /scripts/commands.sh
+RUN ["chmod", "+x", "/scripts/commands.sh"]
+ENTRYPOINT ["/scripts/commands.sh"]
 
 
 EXPOSE 8080
