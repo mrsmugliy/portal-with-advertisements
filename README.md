@@ -18,6 +18,10 @@ $ python3 manage.py runserver
 $ cd test_task_for_insert\angular\angular-app
 $ npm start
 ```
+## Ports
+
+the API backend is under the port ```8000```
+
 
 
 in case of error "standard_init_linux.go:219: exec user process caused: no such file or directory"
