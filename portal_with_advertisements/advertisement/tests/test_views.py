@@ -20,7 +20,7 @@ class CategoryTestCase(APITestCase):
 
     def test_category_list(self):
         response = self.client.get('/api/category/')
-        serializer_data = CategorySerializer([self.car, self.boat], many=True).data
+        serializer_data = CategorySerializer([self.boat, self.car], many=True).data
         self.assertEqual(status.HTTP_200_OK, response.status_code)
         self.assertEqual(serializer_data, response.data)
 
